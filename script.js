@@ -11,10 +11,12 @@ async function clicked() {
     let data = await res.json();
     let temp = document.querySelector(".temp")
     let result = temp.getElementsByTagName("p");
-    result[0].innerHTML = `Name: ${data.name}`
-    result[1].innerHTML = `Temperature: ${data.main.temp}°C`
-    result[2].innerHTML = `Humidity: ${data.main.humidity}`
-    result[3].innerHTML = `Wind: ${data.wind.speed}`
+    result[0].innerHTML = `Sky is ${data.weather[0].main}`
+    result[1].innerHTML = `Name: ${data.name}`
+    result[2].innerHTML = `Temperature: ${data.main.temp}°C`
+    result[3].innerHTML = `Humidity: ${data.main.humidity}`
+    result[4].innerHTML = `Wind: ${data.wind.speed}`
+    
 
     console.log(data);
     if(data.weather[0].main =='Clouds'){
@@ -25,5 +27,17 @@ async function clicked() {
     }
     else if(data.weather[0].main =='Clear'){
         image.src ="/images/clear.png";
+    }
+    else if(data.weather[0].main =='Drizzle'){
+        image.src ="/images/drizzle.png";
+    }
+    else if(data.weather[0].main =='Rain'){
+        image.src ="/images/rain.png";
+    }
+    else if(data.weather[0].main =='Snow'){
+        image.src ="/images/snow.png";
+    }
+    else{
+        image.src=" ";
     }
 }
