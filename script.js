@@ -12,7 +12,7 @@ async function clicked() {
     let temp = document.querySelector(".temp")
     let result = temp.getElementsByTagName("p");
     result[0].innerHTML = `Name: ${data.name}`
-    result[1].innerHTML = `Temperature: ${data.main.temp}`
+    result[1].innerHTML = `Temperature: ${data.main.temp}°C`
     result[2].innerHTML = `Humidity: ${data.main.humidity}`
     result[3].innerHTML = `Wind: ${data.wind.speed}`
 
